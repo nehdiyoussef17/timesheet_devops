@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 import tn.esprit.spring.entities.Entreprise;
 
 @Repository
-public interface EntrepriseRepository extends  CrudRepository<Entreprise, Long> {
+public interface EntrepriseRepository extends  CrudRepository<Entreprise, Integer> {
 
 }

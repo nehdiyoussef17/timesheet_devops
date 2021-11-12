@@ -31,7 +31,7 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 			} 
 			l.info("Out of method retrieveAllEntreprises with success");
 		}catch (Exception e) {
-			l.error("Out of method retrieveAllEntreprises with Error :"+ e);
+			l.error("");
 		}
 
 		return entreprises;
@@ -50,13 +50,14 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 	}
 
 	@Override
-	public void deleteEntreprise(String id) {
-		entrepriseRepository.deleteById(Long.parseLong(id)); 
+	public void deleteEntreprise(int id) {
+		l.info("In deleteEntreprise(): ");
+		entrepriseRepository.deleteById(id);
+		l.info("Out deleteEntreprise()");
 	}
-
 	@Override
-	public Entreprise retrieveEntreprise(String id) {	
-		Entreprise e =  entrepriseRepository.findById(Long.parseLong(id)).orElse(null);
+	public Entreprise retrieveEntreprise(int id) {	
+		Entreprise e =  entrepriseRepository.findById(id).orElse(null);
 		return e; 
 	}
 

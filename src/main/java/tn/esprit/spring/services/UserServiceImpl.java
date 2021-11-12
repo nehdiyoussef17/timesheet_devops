@@ -28,18 +28,15 @@ public class UserServiceImpl implements IUserService {
 			l.debug("connexion à la DB Ok:");
 			for (User user : users) {
 				l.info("for empty");
-
 			}
 			
 			l.info("Out of method retrieveAllUsers with success");
 		}catch (Exception e) {
-			l.error("Out of method retrieveAllUsers with Error :"+ e);
+			l.error("");
 		}
-
 		return users;
 	}
-
-
+	
 	@Override
 	public User addUser(User u) {
 		return userRepository.save(u); 

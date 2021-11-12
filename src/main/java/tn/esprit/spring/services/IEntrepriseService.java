@@ -8,8 +8,8 @@ public interface IEntrepriseService {
 	
 	List<Entreprise> retrieveAllEntreprises(); 
 	Entreprise addEntreprise(Entreprise e);
-	void deleteEntreprise(String id);
+	void deleteEntreprise(int i);
 	Entreprise updateEntreprise(Entreprise e);
-	Entreprise retrieveEntreprise(String id);
+	Entreprise retrieveEntreprise(int id);
 
 }
