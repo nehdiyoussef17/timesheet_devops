@@ -21,12 +21,12 @@ import tn.esprit.spring.entities.User;
 
 @SpringBootTest
 @TestMethodOrder(OrderAnnotation.class)
-public class UserServiceImplTest {
+ class UserServiceImplTest {
 	@Autowired
 	IUserService us;
 	@Test
 	@Order(1)
-	public void testAddUser() throws ParseException {
+	 void testAddUser() throws ParseException {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		Date d = dateFormat.parse("2015-03-23");
 
@@ -37,14 +37,14 @@ public class UserServiceImplTest {
 
 	@Test
 	@Order(2)
-	public void testRetrieveUser() {
+	 void testRetrieveUser() {
 		List<User> listUsers = us.retrieveAllUsers();
 		Assertions.assertEquals(3, listUsers.size());
 	}
 	
 	@Test
 	@Order(3)
-	public void testUpdateUser() {
+	 void testUpdateUser() {
 		List<User> listUsers = us.retrieveAllUsers();
 		User e = listUsers.get(0);
 		e.setLastName("NEHDI2");
@@ -54,7 +54,7 @@ public class UserServiceImplTest {
 	}
 	@Test
 	@Order(4)
-	public void testDeleteUser() {
+	 void testDeleteUser() {
 		List<User> listUsers = us.retrieveAllUsers();
 		us.deleteUser(listUsers.get(0).getId().toString());
 		listUsers = us.retrieveAllUsers();

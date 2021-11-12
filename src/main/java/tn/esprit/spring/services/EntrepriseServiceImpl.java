@@ -26,9 +26,7 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 			l.info("In method retrieveAllEntreprises :"); 
 			entreprises = (List<Entreprise>) entrepriseRepository.findAll();  
 			l.debug("connexion à la DB Ok:");
-			for (Entreprise entreprise : entreprises) {
-				l.info("for empty");
-			} 
+			 
 			l.info("Out of method retrieveAllEntreprises with success");
 		}catch (Exception e) {
 			l.error("");
@@ -40,8 +38,8 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 
 	@Override
 	public Entreprise addEntreprise(Entreprise e) {
-		Entreprise u_saved = entrepriseRepository.save(e); 
-		return u_saved; 
+
+		return entrepriseRepository.save(e); 
 	}
 
 	@Override 
@@ -57,8 +55,7 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 	}
 	@Override
 	public Entreprise retrieveEntreprise(int id) {	
-		Entreprise e =  entrepriseRepository.findById(id).orElse(null);
-		return e; 
+		return  entrepriseRepository.findById(id).orElse(null);
 	}
 
 }

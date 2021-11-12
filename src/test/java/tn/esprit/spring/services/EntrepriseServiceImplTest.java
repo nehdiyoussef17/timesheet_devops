@@ -15,12 +15,12 @@ import tn.esprit.spring.services.IEntrepriseService;
 @SpringBootTest
 @TestMethodOrder(OrderAnnotation.class)
 
-public class EntrepriseServiceImplTest {@Autowired
+ class EntrepriseServiceImplTest {@Autowired
 	IEntrepriseService es;
 
 	@Test
 	@Order(1)
-	public void testAddEntreprise() {
+	 void testAddEntreprise() {
 		es.addEntreprise(new Entreprise("las3ed", "ESPRIT"));
 		List<Entreprise> listEntreprises = es.retrieveAllEntreprises();
 		Assertions.assertEquals(2, listEntreprises.size());
@@ -28,14 +28,14 @@ public class EntrepriseServiceImplTest {@Autowired
 
 	@Test
 	@Order(2)
-	public void testRetrieveAllEntreprises() {
+	 void testRetrieveAllEntreprises() {
 		List<Entreprise> listEntreprises = es.retrieveAllEntreprises();
 		Assertions.assertEquals(2, listEntreprises.size());
 	}
 
 	@Test
 	@Order(3)
-	public void testUpdateEntreprise() {
+	 void testUpdateEntreprise() {
 		List<Entreprise> listEntreprises = es.retrieveAllEntreprises();
 		Entreprise e = listEntreprises.get(0);
 		e.setName("updatelas3ed");
@@ -46,7 +46,7 @@ public class EntrepriseServiceImplTest {@Autowired
 
 	@Test
 	@Order(4)
-	public void testDeleteEntreprise() {
+	 void testDeleteEntreprise() {
 		List<Entreprise> listEntreprises = es.retrieveAllEntreprises();
 		es.deleteEntreprise(listEntreprises.get(0).getId());
 		listEntreprises = es.retrieveAllEntreprises();

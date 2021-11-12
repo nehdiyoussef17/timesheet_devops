@@ -26,9 +26,7 @@ public class UserServiceImpl implements IUserService {
 			l.info("In method retrieveAllUsers :"); 
 			users = (List<User>) userRepository.findAll();  
 			l.debug("connexion à la DB Ok:");
-			for (User user : users) {
-				l.info("for empty");
-			}
+			
 			
 			l.info("Out of method retrieveAllUsers with success");
 		}catch (Exception e) {
@@ -44,8 +42,8 @@ public class UserServiceImpl implements IUserService {
 
 	@Override 
 	public User updateUser(User u) { 
-		User u_saved = userRepository.save(u); 
-		return u_saved; 
+		return userRepository.save(u); 
+		  
 	}
 
 	@Override
@@ -56,8 +54,7 @@ public class UserServiceImpl implements IUserService {
 	@Override
 	public User retrieveUser(String id) {
 		
-		User u =  userRepository.findById(Long.parseLong(id)).orElse(null); 
-		return u; 
+		return userRepository.findById(Long.parseLong(id)).orElse(null); 
 	}
 
 }
