@@ -31,7 +31,7 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 		}catch (Exception e) {
 			l.error("");
 		}
-
+//comentaire
 		return entreprises;
 	}
 
